@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – BuildBlock</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        /* ---------------- HEADER ---------------- */
+        header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 15px 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #f4b400;
+        }
+
+        .logo img {
+            height: 45px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f4b400;
+        }
+
+        /* HAMBURGER */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #f4b400;
+            margin: 4px 0;
+            transition: 0.3s ease;
+        }
+
+        /* MOBILE MENU */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 200px;
+                background: #1a1a1a;
+                display: none;
+                flex-direction: column;
+                padding: 20px;
+                border-left: 3px solid #f4b400;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* ---------------- CONTACT PAGE ---------------- */
+        #contact {
+            padding: 60px 20px;
+        }
+
+        #contact h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .contact-left, .contact-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-left h3,
+        .contact-right h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .contact-left p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* FORM STYLING */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #f4b400;
+            outline: none;
+        }
+
+        button {
+            padding: 14px;
+            background: #f4b400;
+            border: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #d99a00;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="navbar">
+        
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/ChatGPT Image Nov 22, 2025, 09_04_20 AM.png" alt="BuildBlock Logo">
+            BuildBlock
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="potforlio.html">Portfolio</a>
+            <a href="projects.html">Projects</a>
+            <!-- <a href="about.html">About Us</a> -->
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Hamburger -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</header>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("active");
+    }
+</script>
+
+
+<!-- CONTACT PAGE -->
+<section id="contact">
+    <div class="contact-container">
+
+    <h2>Contact Us</h2>
+
+    <div class="contact-flex">
+
+        <div class="contact-left">
+            <h3>Get in Touch</h3>
+
+            <p>
+                <strong>Phone: Vusi Mokoena</strong> 
+                <a href="tel:+27681586102" style="color:#f4b400; text-decoration:none;">
+                    068 158 6102
+                </a>
+            </p>
+
+            <p><strong>WhatsApp:</strong> 
+                <a href="https://wa.me/27681586102" style="color:#f4b400; text-decoration:none;" target="_blank">
+                    068 158 6102
+                </a>
+            </p>
+
+            <p><strong>Email:</strong> 
+                <a href="mailto:info@buildblock.co.za" style="color:#f4b400; text-decoration:none;">
+                    info@buildblock.co.za
+                </a>
+            </p>
+
+            <p><strong>Service Area:</strong> We operate nationwide across South Africa.</p>
+
+            <p style="margin-top: 20px; line-height: 1.6;">
+                Have a question, need a quote, or want to place an order?
+                Our team is ready to assist you. Contact us anytime!
+            </p>
+        </div>
+
+
+            <div class="contact-right">
+                <h3>Send Us a Message</h3>
+
+                <form action="mailto:info@buildblock.co.za" method="POST" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" rows="6" placeholder="Write your message..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+">
+    <div style="max-width: 1100px; margin: auto;">
+
+        <h3 style="margin: 0; font-size: 24px; color: #f4b400;">BuildBlock</h3>
+        <p style="margin: 10px 0; font-size: 16px; color: #dddddd;">
+            Quality Construction • Affordable Pricing • Trusted Service
+        </p>
+
+        <p style="margin: 5px 0; font-size: 16px;">
+            <strong>Phone: Vusi Mokoena</strong> 
+                <a href="tel:+27681586102" style="color:#f4b400; text-decoration:none;">
+                    068 158 6102
+                </a> &nbsp; | &nbsp;
+            <strong>Email:</strong> info@buildblock.co.za
+        </p>
+
+        <p style="margin-top: 15px; font-size: 14px; color: #cccccc;">
+            © 2025 BuildBlock. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

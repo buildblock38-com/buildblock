@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Price List Rooms</title>
+
+<style>
+    /* BODY AND TEXT */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f7f7f7;
+        color: #333;
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: #222;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-top: 40px;
+    }
+
+    p {
+        font-size: 18px;
+        margin: 5px 0;
+    }
+
+    /* HEADER */
+    header {
+        background-color: #1b1b1b;
+        color: #fff;
+        padding: 20px 40px;
+        /* position: sticky; */
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 28px;
+        color: #ffe08a;
+    }
+
+    /* CARD STYLE FOR TOP INFO */
+    .info-box {
+        background: white;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 700px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    table {
+        width: 100%;
+        max-width: 900px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+    th {
+        background: #ffe08a;
+        font-weight: bold;
+        color: #333;
+        font-size: 18px;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #000;
+        background: #fff4c2;
+    }
+
+       /* NAVBAR */
+/* NAVBAR */
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #1a1a1a;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: #f4b400;
+}
+
+/* NAV LINKS (Desktop) */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4b400;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #f4b400;
+    margin: 4px 0;
+    transition: 0.3s ease;
+}
+
+/* Hamburger animation */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 260px;
+        height: 100vh;
+        background: #1a1a1a;
+        flex-direction: column;
+        padding: 80px 20px;
+        gap: 25px;
+        transition: 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+
+
+/* CONTACT FORM */
+.contact-section {
+    padding: 50px 25px;
+    text-align: center;
+    background: #eeeeee;
+    margin-top: 40px;
+}
+
+.contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #f4b400; /* BuildBlock Yellow */
+    outline: none;
+}
+
+.contact-form button {
+    background: #f4b400;
+    border: none;
+    padding: 14px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #d99a00;
+}
+
+/* Footer */
+        footer {
+            background: #1b1b1b;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<!-- HEADER -->
+<header>
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="images/ChatGPT Image Nov 22, 2025, 09_04_20 AM.png" 
+                 alt="BuildBlock Logo" 
+                 style="height: 45px; margin-right: 10px;">
+            BuildBlock
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="potforlio.html">Portfolio</a>
+            <a href="projects.html">Projects</a>
+            <!-- <a href="about.html">About Us</a> -->
+            <a href="contacts.html">Contact</a>
+        </nav>
+
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("open");
+    });
+
+    // Close menu automatically when clicking a link (mobile)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            hamburger.classList.remove("open");
+        });
+    });
+</script>
+
+<h1>Price List – Rooms</h1>
+
+<div class="info-box">
+    <p><strong>Slabs:</strong> R50</p>
+    <p><strong>Windows:</strong> R690 (NE3), R790 (NC4), R925 (ND4) – 1440/600, 1440/900, 1440/1200</p>
+    <p><strong>Contact:</strong> Morris – 066 484 3167</p>
+    <br>
+    <p><strong>8ft Poles:</strong> R220</p>
+    <p><strong>Door:</strong> R1690</p>
+    <p><strong>Contact:</strong> Luan – 071 437 2333</p>
+</div>
+
+<h2>ROOM PRICES (PRECAST MATERIAL ONLY)</h2>
+
+<table>
+    <tr>
+        <th></th>
+        <th>1 Room<br>(3×3m)</th>
+        <th>2 Room<br>(3×6m)</th>
+        <th>3 Room<br>(3×9m)</th>
+        <th>4 Room<br>(3×12m)</th>
+    </tr>
+    <tr>
+        <td><strong>Slabs</strong></td>
+        <td>65</td>
+        <td>96</td>
+        <td>140</td>
+        <td>184</td>
+    </tr>
+    <tr>
+        <td><strong>Poles</strong></td>
+        <td>9</td>
+        <td>15</td>
+        <td>21</td>
+        <td>27</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>R 3 250</td>
+        <td>R 4 800</td>
+        <td>R 7 000</td>
+        <td>R 9 200</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>R 1 980</td>
+        <td>R 3 300</td>
+        <td>R 4 620</td>
+        <td>R 5 940</td>
+    </tr>
+    <tr class="highlight">
+        <td><strong>Total</strong></td>
+        <td><strong>R 5 230</strong></td>
+        <td><strong>R 8 100</strong></td>
+        <td><strong>R 11 620</strong></td>
+        <td><strong>R 15 140</strong></td>
+    </tr>
+</table>
+
+<h2>ROOM PRICES (MATERIAL + LABOUR + TRANSPORT) – TSHWANE</h2>
+
+<table>
+    <tr>
+        <th>1 Room<br>(3×3m)</th>
+        <th>2 Room<br>(3×6m)</th>
+        <th>3 Room<br>(3×9m)</th>
+        <th>4 Room<br>(3×12m)</th>
+    </tr>
+    <tr>
+        <td>Material, Labour, Transport<br>1 Window & 1 Door</td>
+        <td>Material, Labour, Transport<br>2 Windows & 2 Doors</td>
+        <td>Material, Labour, Transport<br>3 Windows & 3 Doors</td>
+        <td>Material, Labour, Transport<br>4 Windows & 4 Doors</td>
+    </tr>
+    <tr class="highlight">
+        <td><strong>R 13 900.00</strong></td>
+        <td><strong>R 22 700.00</strong></td>
+        <td><strong>R 32 700.00</strong></td>
+        <td><strong>R 42 800.00</strong></td>
+    </tr>
+</table>
+
+<!-- CONTACT FORM SECTION -->
+<section class="contact-section" id="email">
+    <h2>Send Us a Message</h2>
+
+    <form class="contact-form" action="mailto:info@buildblock.co.za" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        <button type="submit">Send Email</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer style="
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+">
+    <div style="max-width: 1100px; margin: auto;">
+
+        <h3 style="margin: 0; font-size: 24px; color: #f4b400;">BuildBlock</h3>
+        <p style="margin: 10px 0; font-size: 16px; color: #dddddd;">
+            Quality Construction • Affordable Pricing • Trusted Service
+        </p>
+
+        <p style="margin: 5px 0; font-size: 16px;">
+            <strong>Phone: Vusi Mokoena</strong> 
+                <a href="tel:+27681586102" style="color:#f4b400; text-decoration:none;">
+                    068 158 6102
+                </a> &nbsp; | &nbsp;
+            <strong>Email:</strong> info@buildblock.co.za
+        </p>
+
+        <p style="margin-top: 15px; font-size: 14px; color: #cccccc;">
+            © 2025 BuildBlock. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
